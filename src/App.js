@@ -4,12 +4,12 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import { useState } from "react";
 import Alerts from "./components/Alerts";
-// import About from "./components/About";
-// import {BrowserRouter as Router, 
+import About from "./components/About";
+import {BrowserRouter as Router, 
 //  // Switch, 
-//   Route, 
+  Route, 
 //  // Link,
-//   Routes} from "react-router-dom";
+  Routes} from "react-router-dom";
 
 // import { type } from "@testing-library/user-event/dist/type";
 
@@ -46,17 +46,16 @@ function App() {
 
   return (
     <>
-    {/* <Router> */}
+    <Router>
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
        <Alerts alert={alert}/> 
        <div className="container my-3">
-       <TextForm showAlert={showAlert} heading="Enter the text to analyze"  mode={mode}/>
-       </div>
-       {/* <Routes> */}
-       {/* <Route exact path="/" element={}/>
-       <Route exact path="/about" element={<About/>}/>
+       <Routes>
+      <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text to analyze"  mode={mode}/>}/>
+       <Route exact path="/about" element={<About mode={mode}/>}/>
     </Routes>
-      </Router> */}
+    </div>
+      </Router>
     </>
   );
 }
